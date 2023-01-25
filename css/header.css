@@ -1,0 +1,160 @@
+.cabecalho-menu_hamburguer {
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.cabecalho-divisao {
+    display: flex;
+    align-items: center;
+}
+
+.header-imagem {
+    padding: 0.5em;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 70vw;
+}
+
+.header_botao:checked ~ .lista-menu {
+    display: block;
+}
+
+.lista_menu-titulo, .lista_menu-item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista_menu-titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista_menu-link {
+    background: var(--azul-gradiente);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.header_botao {
+    display: none;
+}
+
+.header_rotulo {
+    padding-top: 12px;
+}
+
+.opcoes,
+.container_titulo,
+.cabecalho_texto {
+    display: none;
+}
+
+.header_botao:checked ~ .header_rotulo > .cabecalho-menu_hamburguer {
+    background-image: url(../img/Menuaberto.png);
+}
+
+.header_botao:checked ~ .header_rotulo {
+    background: var(--azul-gradiente);
+}
+
+@media screen and (min-width: 1024px) {
+    .container_titulo, .container_titulo-negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+    
+    .container_titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container_titulo-negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes_item {
+        padding: 2em 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes_link {
+        text-decoration: none;
+    }
+
+    .header-imagem-none {
+        display: none;
+    }
+
+    .cabecalho-menu_hamburguer {
+        display: none;
+    }
+
+    .opcoes_botao {
+        display: none;
+    }
+
+    .opcoes_botao:checked ~ .lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes_botao:checked ~ .opcoes_rotulo  .opcoes_item {
+        background: var(--azul-gradiente);
+        color: var(--branco);
+    }
+
+    .lista_menu-item:hover {
+        background: var(--azul-gradiente);
+    }
+
+    .lista_menu-item:hover > .lista_menu-link {
+        -webkit-text-fill-color: var(--branco);
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .container_titulo{
+        margin-right: 0.5em;
+    }
+    
+    .cabecalho_link {
+        display: flex;
+        align-items: center;
+        color: var(--preto);
+    }
+
+    .cabecalho_texto {
+        display: block;
+    }
+
+    .cabecalho {
+        padding: 0 3em;
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+}
